@@ -3,7 +3,7 @@
  <html xmlns:th="https://www.thymeLeaf.org">
  <head>
  <meta charset= "utf-8">
- <title> Fruiteria Antoni</title>
+ <title> Branch offices</title>
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
  </head>
@@ -12,8 +12,8 @@
  
 	 <nav class="navbar navbar-expand-lg bg-light">
 	  <div class="container-fluid">
-	    <a class="navbar-brand" href="#">Fruites</a> 
-	          <a class="nav-link" href="/fruita/add">Añadir Fruita</a>
+	    <a class="navbar-brand" href="#">Branch offices</a> 
+	          <a class="nav-link" href="/sucursal/add">Add branch office</a>
 	  </div>
 	</nav>
  
@@ -23,25 +23,27 @@
  
  	<div calss = "container">
  		<div class= "row">
- 			<h1> Llista de fruites </h1>
+ 			<h1> List of branch offices </h1>
  		</div>
 		 <table class="table">
 			  <thead class= "table-dark">
 			    <tr>
 			      <th >#</th>
-			      <th >Noms</th>
-			      <th >Pes en Kg</th>
+			      <th >Names</th>
+			      <th >Countries</th>
 			      <th>        </th>
 			    </tr>
 			  </thead>
 			  <tbody>
-			    <tr th:each="fruita :${fruites}">
-			    	<td th:text="${fruita.id}">Id</td>
-		 			<td th:text="${fruita.nom}">Nom</td>
-		 			<td th:text="${fruita.quatitatQuilos}">QuatitatQuilos</td>			   
+			    <tr th:each="Sucursal :${Sucursal}">
+			    	<td th:text="${Sucursal.pk_SucursalID}">Id</td>
+		 			<td th:text="${Sucursal.nomSucursal}">Nom</td>
+		 			<td th:text="${Sucursal.paisSucursal}">Pais</td>			   
 			    	<td>
-						<a th:href= "@{/fruita/update/{id}(id=${fruita.id})}" class= "btn btn-info"> Update </a>
-						<a th:href= "@{/fruita/delete/{id}(id=${fruita.id})}" class= "btn btn-danger"> Eliminar </a>
+						<a th:href= "@{/sucursal/update/{id}(id=${Sucursal.pk_SucursalID})}" class= "btn btn-info"> Update </a>
+						<a th:href= "@{/sucursal/delete/{id}(id=${Sucursal.pk_SucursalID})}" class= "btn btn-danger"> Delete </a>
+						<a th:href= "@{/sucursal/EU/{id}(id=${Sucursal.pk_SucursalID})}" class= "btn btn-secondary"> Is From EU? </a>
+
 					</td>
 			    </tr>
 			    			   
