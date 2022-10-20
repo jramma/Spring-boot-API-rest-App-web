@@ -12,7 +12,7 @@
  
 	 <nav class="navbar navbar-expand-lg bg-light">
 	  <div class="container-fluid">
-	    <a class="navbar-brand" href="/sucursal/getAll">Fruites</a> 
+	    <a class="navbar-brand" href="/sucursal/getAll">Branch offices</a> 
 	          
 	  </div>
 	</nav>
@@ -20,17 +20,22 @@
  	<div calss = "container">
  		<div class= "row">
  			<div calss="col-lg-6 col-md-6 container justify-content-center card">
- 				<h1 class="text-center"> Editar fruita </h1>
+ 				<h1 class="text-center"> Edit branch office </h1>
  				<div class= "card-body">
- 					<form th:action="@{/sucursales/{id}(id=${sucursal.pk_SucursalID})}" th:object="${Sucursal}" method= "POST">
+ 					<form th:action="@{/sucursales/{id}(id=${Sucursal.pk_SucursalID})}" th:object="${Sucursal}" method= "POST">
 	 					<div class= "form-group"> 
-	 						<label>Nom: </label>
+	 						<label>Name: </label>
+	 						<input type="number" name="id" th:field="*{pk_SucursalID}" class="form-control"> 						
+	 					</div>
+	 					<br>
+	 					<div class= "form-group"> 
+	 						<label>Name: </label>
 	 						<input type="text" name="name" th:field="*{nomSucursal}" class="form-control" placeholder= "Write the name..." > 						
 	 					</div>
 	 					<br>
 	 					<div class= "form-group">
-	 						<label>Pes en kg: </label>
-	 						<input type="number" name="country" th:field="*{paisSucursal}" class="form-control" placeholder= "Write the name..."  > 						
+	 						<label>Country: </label>
+	 						<input type="text" name="country" th:field="*{paisSucursal}" class="form-control" placeholder= "Write the name..."  > 						
 	 					</div>
 	 					<br>
 	 					<div class= "box-footer">
